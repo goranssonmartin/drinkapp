@@ -8,6 +8,14 @@ function Explore(props) {
     const searchValue = document.getElementById("searchInput").value;
     updateSearchWord(searchValue);
   };
+
+  let filteredResults = drinksJSON.cocktails.filter((cocktail) =>
+    cocktail.name.includes(searchWord)
+  );
+
+  const handleDrinkClick = (index) => {
+    console.log(index);
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -15,9 +23,23 @@ function Explore(props) {
         <button type="submit">Search</button>
       </form>
       {searchWord &&
-        drinksJSON.cocktails
-          .filter((cocktail) => cocktail.name.includes(searchWord))
-          .map((cocktail) => <p>{cocktail.name}</p>)}
+        filteredResults.length > 0 &&
+        filteredResults.map((cocktail) => (
+          <div
+            key={cocktail.name}
+            onClick={() =>
+              handleDrinkClick(
+                drinksJSON.cocktails.findIndex(
+                  (item) => item.name === cocktail.name
+                )
+              )
+            }
+          >
+            <p>{cocktail.name}</p>
+            <img src={cocktail.image} alt={cocktail} />
+          </div>
+        ))}
+      {searchWord && filteredResults.length === 0 && <p>No drinks found</p>}
     </div>
   );
 }
