@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div>
-      <Link to="/" exact={true}>
+      <Link to="/">
         Home
       </Link>
       <Link to="/explore">Explore</Link>

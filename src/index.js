@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Header from "./Components/Header";
+import DrinkInformation from "./Components/DrinkInformation";
 import Home from "./Components/Home";
 import Explore from "./Components/Explore";
 import * as serviceWorker from "./serviceWorker";
@@ -13,7 +14,8 @@ const routes = (
     <div>
     <Switch>
       <Route path="/" component={Home} exact={true} />
-      <Route path="/explore" component={Explore} />
+      <Route path="/explore/" component={Explore} exact={true}/>
+      <Route path="/explore/:id" component={DrinkInformation} />
       </Switch>
     </div>
   </BrowserRouter>
