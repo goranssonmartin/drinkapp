@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import drinksJSON from "../Data/drinks.json";
+import { useHistory } from "react-router-dom";
 
 function Explore(props) {
+  let history = useHistory();
   const [searchWord, updateSearchWord] = useState();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ function Explore(props) {
   );
 
   const handleDrinkClick = (index) => {
-    console.log(index);
+    history.push("/explore/"+index.toString());
   };
   return (
     <div>
