@@ -1,0 +1,21 @@
+.navLink{
+    padding:10px;
+    font-size: 30px;
+    color:red;
+    background-color: aqua;
+    font-family:"Comic Sans MS";
+    text-decoration: none;
+}
+
+
+.navLinkActive{
+    font-weight:bold;
+    font-size: 40px;
+    background-color: black;
+}
+
+#navLinkContainer{
+    width:100%;
+    background-color: aqua;
+    overflow: hidden;
+}

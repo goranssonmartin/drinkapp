@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import "../Styling/Header.css";
 
 function Header() {
   return (
-    <div>
-      <Link to="/">
+    <div id="navLinkContainer">
+      <NavLink to="/" className="navLink" activeClassName="navLinkActive" exact={true}>
         Home
-      </Link>
-      <Link to="/explore">Explore</Link>
+      </NavLink>
+      <NavLink to="/explore" className="navLink" activeClassName="navLinkActive">Explore</NavLink>
     </div>
   );
 }

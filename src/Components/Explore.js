@@ -47,8 +47,8 @@ function Explore() {
             <img src={cocktail.image} alt={cocktail} />
           </div>
         ))}
-      {searchWord && filteredResults.length === 0 && <p>No drinks found</p>}
-      </div>
+      </div>      
+      {searchWord && filteredResults.length === 0 && <h2>No drinks found</h2>}
     </div>
   );
 }
