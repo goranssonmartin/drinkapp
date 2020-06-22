@@ -3,7 +3,6 @@ import drinksJSON from "../Data/drinks.json";
 
 function DrinkInformation(props) {
   const drinkId = props.match.params.id;
-  console.log(drinkId);
   const getCorrectData = () => {
     if (drinkId > drinksJSON.cocktails.length - 1) {
       return <p>Invalid drink</p>;
